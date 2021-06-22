@@ -63,7 +63,7 @@ int loopcount = 100;
 
 void Thread1 (void const *argument) 
 {
-	unsigned char item = 0x40;
+	unsigned char item = 0x90;
 	for(i=0; i<10; i++){
 		put(item++);
 	}
