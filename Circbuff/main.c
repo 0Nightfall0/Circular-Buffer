@@ -59,12 +59,12 @@ unsigned char get(){
 	return rr;
 }
 
-int loopcount = 10;
+int loopcount = 100;
 
 void Thread1 (void const *argument) 
 {
 	unsigned char item = 0x30;
-	for(i=0; i<loopcount; i++){
+	for(i=0; i<20; i++){
 		put(item++);
 	}
 }
@@ -72,7 +72,7 @@ void Thread1 (void const *argument)
 void Thread2 (void const *argument) 
 {
 	unsigned int data = 0x00;
-	for(j=0; j<loopcount; j++){
+	for(j=0; j<20; j++){
 		data = get();
 		osMessagePut(Q_LED,data,osWaitForever);
 	}
@@ -81,7 +81,7 @@ void Thread2 (void const *argument)
 void Thread3 (void const *argument) 
 {
 	unsigned int data2 = 0x00;
-	for(k=0; k<loopcount; k++){
+	for(k=0; k<20; k++){
 		data2 = get();
 		osMessagePut(Q_LED,data2,osWaitForever);
 	}
