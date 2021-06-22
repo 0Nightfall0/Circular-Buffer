@@ -89,10 +89,10 @@ void Thread3 (void const *argument)
 
 void Thread4 (void const *argument) 
 {
-	unsigned int data2 = 0x00;
+	unsigned int data3 = 0x00;
 	for(l=0; l<20; l++){
-		data2 = get();
-		osMessagePut(Q_LED,data2,osWaitForever);
+		data3 = get();
+		osMessagePut(Q_LED,data3,osWaitForever);
 	}
 }
 
