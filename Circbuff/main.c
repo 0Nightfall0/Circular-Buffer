@@ -34,7 +34,7 @@ long int i=0;
 long int j=0;
 long int k=0;
 long int l=0;
-const unsigned int size = 7;
+const unsigned int size = 10;
 unsigned char buffer[size];
 unsigned int tail = 0;
 unsigned int head = 0;
@@ -63,8 +63,8 @@ int loopcount = 100;
 
 void Thread1 (void const *argument) 
 {
-	unsigned char item = 0x30;
-	for(i=0; i<20; i++){
+	unsigned char item = 0x40;
+	for(i=0; i<10; i++){
 		put(item++);
 	}
 }
@@ -72,7 +72,7 @@ void Thread1 (void const *argument)
 void Thread2 (void const *argument) 
 {
 	unsigned int data = 0x00;
-	for(j=0; j<20; j++){
+	for(j=0; j<10; j++){
 		data = get();
 		osMessagePut(Q_LED,data,osWaitForever);
 	}
@@ -81,7 +81,7 @@ void Thread2 (void const *argument)
 void Thread3 (void const *argument) 
 {
 	unsigned int data2 = 0x00;
-	for(k=0; k<20; k++){
+	for(k=0; k<10; k++){
 		data2 = get();
 		osMessagePut(Q_LED,data2,osWaitForever);
 	}
@@ -90,7 +90,7 @@ void Thread3 (void const *argument)
 void Thread4 (void const *argument) 
 {
 	unsigned int data3 = 0x00;
-	for(l=0; l<20; l++){
+	for(l=0; l<10; l++){
 		data3 = get();
 		osMessagePut(Q_LED,data3,osWaitForever);
 	}
